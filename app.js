@@ -8,4 +8,4 @@ app.get("/", (req, res) => {
   res.send("index")
 });
 
-app.set("viewwngine", "ejs") 
+app.set("viewengine", "ejs") 
