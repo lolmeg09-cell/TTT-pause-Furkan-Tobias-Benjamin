@@ -1,0 +1,12 @@
+body {
+  background-color: var(--bgColor);
+}
+
+:root {
+  --bgColor:rgb(68, 68, 68);
+  --textColor:white;
+  --accentColor:pink;
+}
+
+
+
