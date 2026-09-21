@@ -8,5 +8,27 @@ body {
   --accentColor:pink;
 }
 
+nav {
+  background-color: var(--accentColor);
+  display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  cursor: pointer ;
+  
+}
+
+nav ul li {
+  display: flex;
+}
+
 
 
