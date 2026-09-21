@@ -1,11 +1,17 @@
 const express = require("express")
 const app = express();
 
-app.listen(4000);
+
 
 
 app.get("/", (req, res) => {
-  res.send("index")
+  res.render("index")
 });
 
-app.set("viewwngine", "ejs") 
+app.set("viewengine", "ejs") 
+app.use(express.urlencoded({extended:true}));
+app.use(express.static("public"));
+
+app.listen(3000, () => {
+  console.log("http://localhost:3000");
+});
