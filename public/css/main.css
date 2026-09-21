@@ -1,11 +1,78 @@
-body {
-  background-color: var(--bgColor);
+:root {
+    --bgColor: rgb(59, 47, 38);
+    --accentColor: rgb(204, 178, 131);
+    --textColor: rgb(253, 234, 219);
+}
+button{
+    padding: 8px 10px;
+    border-radius: 20px;
+    background-color: var(--accentColor);
+}
+p, label,h1,h2,h3 {
+    color: var(--textColor)
 }
 
-:root {
-  --bgColor:rgb(68, 68, 68);
-  --textColor:white;
-  --accentColor:pink;
+body{
+
+    background-color: var(--bgColor)
+}
+input {
+    padding: 4px;
+    border-radius: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+}
+
+img {
+    max-width: 200px;
+}
+.Kaffe {
+    display: flex;
+    justify-content: center;
+}
+.kaff {
+    border: 1px solid var(--accentColor);
+    border-radius: 20px;
+    min-height: 350px;
+    
+}
+
+.kaff img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
+  
+}
+ nav a {
+  color: var(--textColor);
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  
+}
+nav ul li{
+    background-color: var(--accentColor);
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.kaff a {
+    color: var(--textColor);
+    list-style: none;
+    text-decoration: none;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
 }
 
 nav {
