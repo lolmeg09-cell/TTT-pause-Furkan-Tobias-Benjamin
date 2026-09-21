@@ -1,10 +1,12 @@
 body {
-  background-color: var(--bgColor);
-}
+  background: (--linearColor);
+};
 
 :root {
-  --bgColor:rgb(68, 68, 68);
-  --textColor:white;
+  --bgColor:rgb(231, 106, 23);
+  --textColor:	#F7F1E7;
+  --secondColor: #C8C0B7; 
+  --linearColor: linear-gradient(135deg, #C83D0A 0%, #E9540B 35%, #F47716 65%, #FF9A32 100%);
   --accentColor:pink;
 }
 
