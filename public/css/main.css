@@ -1,6 +1,6 @@
 body {
-  background: (--linearColor);
-};
+  background: var(--linearColor);
+}
 
 :root {
   --bgColor:rgb(231, 106, 23);
@@ -13,7 +13,7 @@ body {
 nav {
   background-color: var(--accentColor);
   display: flex;
-}
+} 
 
 nav ul li a {
   text-decoration: none;
