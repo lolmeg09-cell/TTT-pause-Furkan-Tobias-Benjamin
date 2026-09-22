@@ -5,15 +5,13 @@ const app = express();
 
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index")
 });
 
-app.set("view engine", "ejs") 
+app.set("viewengine", "ejs") 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
-app.listen(3000 , () => {
-  console.log("http://localhost:3000/")
+app.listen(3000, () => {
+  console.log("http://localhost:3000");
 });
-
-
