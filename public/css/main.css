@@ -2,6 +2,7 @@ body {
   background: var(--linearColor);
   color: var(--textColor);
   transition: background 0.3s ease, color 0.3s ease;
+
 }
 
 :root {
@@ -10,7 +11,6 @@ body {
   --secondColor: #C8C0B7;
   --linearColor: linear-gradient(135deg, #C83D0A 0%, #E9540B 35%, #F47716 65%, #FF9A32 100%);
   --accentColor: pink;
-  --primaryColor: #3a435d;;
   --baseColor: #e8e9ed;
 }
 
@@ -21,7 +21,6 @@ body {
   --linearColor: linear-gradient(135deg, #070b1d 0%, #101425 50%, #3a435d 100%);
   --accentColor: #0071ff;
   --primaryColor:#3a435d;
-  --baseColor:#101425;
 }
 
 nav {
@@ -46,7 +45,7 @@ nav ul li {
   display: flex;
 }
 
-#theme-switch{
+#theme-Switch{
   height: 50px;
   width:50px;
   padding:0px;
@@ -60,19 +59,98 @@ nav ul li {
   right: 20px;
 }
 
-#theme-switch{
+#theme-Switch{
   fill: var(--primaryColor);
 }
 
-#theme-switch img:last-child{
+#theme-Switch img:last-child{
   display: none;
 }
 
-.darkmode #theme-switch img:first-child {
+.darkmode #theme-Switch img:first-child {
   display: none;
 }
 
-.darkmode #theme-switch img:last-child {
+.darkmode #theme-Switch img:last-child {
   display: block;
 }
 
+#wrapper_timer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container_t{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.20);
+  border-radius: 2em;
+  padding: 4em 3em;
+
+
+}
+
+.title_t {
+  font-size: 3em;
+
+}
+
+hr{
+  width: 100%;
+  border-radius: 1em;
+  background-color: white;
+  height: 5px;
+  border: none;
+}
+
+.btn_t   {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2 ease-in-out;
+}
+
+
+.timer{
+  font-size: 10em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.button_wrapper_t{
+  display:flex;
+  gap: 1em;
+}
+
+
+
+.btn_t:hover{
+  transform: translateY(-10px);
+
+}
+
+#start{
+    background-color: greenyellow;
+}
+
+
+#stop{
+  background-color: #C83D0A;
+}
+#reset{
+  background-color: rgb(24, 137, 242);
+}
