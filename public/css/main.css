@@ -1,0 +1,233 @@
+body {
+  background: var(--linearColor);
+  color: var(--textColor);
+
+}
+
+:root {
+  --bgColor:rgb(45, 141, 113);
+  --textColor:	#f7f1e7;
+  --thirdColor: rgb(255, 224, 152);
+  --secondColor: #055f44; 
+  --higlightColor: #975959; 
+  --linearColor: linear-gradient(360deg, #e6f3e1, #C9D8C2, #9fbea8, #7da490, #456151);
+
+  
+}
+
+
+nav {
+    display: flex;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--textColor);
+   font-family: Arial, Helvetica, sans-serif;
+
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  cursor: pointer ;
+  
+}
+
+nav ul li {
+  display: flex;
+}
+
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: 130px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 1000;
+    
+   
+}
+h2 {
+    color: var(--textColor);
+    font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   position: relative;
+   justify-content: left;
+   
+ top: 20px;
+  display: flex;
+ 
+   
+    
+}
+
+  
+h5 {
+  display: flex;
+  justify-content: right;
+  
+  font-weight: 200;
+  
+}
+.upperText {
+   font-size: 20px;
+   position: relative;
+   top: -50px;
+   right: 20px;
+}
+
+#pust{
+  color: var(--thirdColor);
+ position: relative;
+     top: -50px;
+     font-family: 'Times New Roman', Times, serif;
+     font-weight: 100;
+   
+}
+
+
+
+p {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+
+}
+
+ #nav2{
+     display: flex;
+     width: 100%;
+     
+    }
+
+    #nav2 ul{
+     list-style: none;
+     display: flex;
+     width: 100%;
+     align-items: center;
+     justify-content: space-evenly;
+     cursor: pointer ;
+    }
+    
+    #nav2 li a{
+        text-decoration: none;
+        color: var(--textColor);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    
+    
+    .box{
+        background-color: var(--secondColor,);
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        padding: 20px 30px;
+        position: relative;
+    
+        margin-top: 100px;
+
+ }
+
+    
+.box :hover {
+    background-color: var(--higlightColor);
+}
+
+.timerBox {
+  background-color: var(--secondColor);
+  display: flex;
+  width: 100px;
+  background-color: #f7f1e7;
+  
+}
+
+#timer_box_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#kredits {
+  color: var(--linearColor);
+  font-weight: 100;
+  font-size: 20px;
+  
+
+}
+.progressBar {
+   display: flex;
+  justify-content: center;
+  
+}
+.progressBar input {
+   width: 500px;
+   accent-color: var(--secondColor);
+}
+
+.Mnav {
+  
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  
+}
+.Mnav button {
+  background-color: var(--secondColor);
+  color: var(--textColor);
+  border: none;
+  border-radius: 30px;
+  width: 200px;
+  height: 40px;
+  gap: 20px;
+}
+#prev:hover {
+  filter: brightness(130%);
+  
+  
+}
+#play:hover {
+  filter: brightness(130%);
+  
+}
+#next:hover {
+  filter: brightness(130%);
+  
+}
+#prev:active {
+  filter: brightness(150%);
+ 
+  
+  
+}
+#play:active {
+  filter: brightness(150%);
+  
+}
+#next:active {
+  filter: brightness(150%);
+  
+}
+
+#slider input {
+  background-color: var(--secondColor);
+  color: var(--secondColor);
+}
+
+
+
+.music-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
