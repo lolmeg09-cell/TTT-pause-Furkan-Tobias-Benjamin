@@ -4,7 +4,57 @@
 
   <body>
   <!-- <%- include("./partials/nav.ejs") %> -->
+  <h1>Ta en pause</h1>
+  <h1 id="pust">Pust</h1>
+  <p>Skole kan ta mye energi, denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
+  <p>Kom tilbake til timen med et utvilt hodet.</p>
+   <div class="music-container">
+    <audio id="audio" src="Ambient.mp3"></audio>
+                 
+   </div>
+   <div class="progressBar">
+     <input type="range" id="slider" min="0" max="100" value="0">
+     <div class="timeStamp">
+      <span id="currentTime">0:00</span>
+      <span id="duration">0:00</span>
+     </div>
+   </div>
+   <div class="Mnav">
+     <button id="prev" class="action-btn">◁◁</button>
+     <button id="play"class="action-btn main-btn">► Play</button>
+     <button id="next" class="action-btn">▷▷</button>
+   </div>
 
+
+<div id="nav2">
+  <div id="timer_box_wrap">
+    <div class="timerBox"></div>
+  </div>
+    <ul>
+      <div id="box1" class="box">
+        <li>
+          <a href="/breathe">Breathe</a>
+        </li>
+      </div>
+      <div id="box2" class="box">
+        <li>
+          <a href="/move">Move</a>
+        </li>
+      </div>
+      <div id="box3" class="box">
+        <li>
+          <a href="/spill">Games</a>
+        </li>
+      </div>
+      <div id="box4" class="box">
+        <li>
+          <a href="/doNothing">Do Nothing</a>
+        </li>
+      </div>
+    </ul>
+</div>
+<p id="kredits">Laget av</p>
+<p id="kredits">Furkan  Benjamin  Tobias</p>
 
   <button id="theme-Switch">
     <img src="./img/dark.svg" alt="dark mode button">
@@ -34,6 +84,8 @@
   </div>
 
   
+
+
 
 
 
