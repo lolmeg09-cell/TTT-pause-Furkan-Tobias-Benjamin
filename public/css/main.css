@@ -199,7 +199,7 @@ hr{
 }
 
 .circle{
-  background-color: #010f1c;
+  background-color: var(--bgColor);
   height: 100%;
   width: 100%;
   position: absolute;
