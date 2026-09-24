@@ -7,8 +7,11 @@ const app = express();
 app.get("/", (req, res) => {
   res.render("index")
 });
+app.get("/spill", (req, res) => {
+  res.render("spill")
+});
 
-app.set("viewengine", "ejs") 
+app.set("view engine", "ejs") 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
