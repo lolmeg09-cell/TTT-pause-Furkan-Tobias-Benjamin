@@ -30,7 +30,8 @@ body {
   --accentColor: #0071ff;
   --primaryColor:#3a435d;
 }
-
+ 
+ 
 nav {
   background-color: var(--accentColor);
   display: flex;
@@ -276,4 +277,64 @@ hr{
     transform: scale(1);
 
   }
+}
+img {
+  max-width: 200px;
+}
+ 
+.box1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+ 
+.box2{
+  border: 1px solid var(--accentColor);
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+ 
+.box2 img {
+  
+  width: 250px;
+  height: 200px;
+  object-fit:cover;
+  border-radius: 20px 20px 0px 0px;
+}
+.overskrift{
+  font-size: 50px;
+  text-align: center;
+}
+.cardlink{
+  text-decoration: none;
+  color: black;
+}
+#wrapptimer{
+  display: flex;
+  flex-direction: column;
+}
+.clock{
+  width: 35px;
+  height: 35x;
+  box-sizing: border-box;
+}
+.clock::-webkit-outer-spin-button,
+.clock::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.clock {
+  width: 46px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+#wrappinput{
+  display: flex;
+  /* flex-direction: ; */
 }

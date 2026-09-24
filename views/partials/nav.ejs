@@ -1,9 +1,20 @@
 <nav>
     <ul>
-      <li><a href="/">Hjem</a></li>
+      <li><a href="/" target="home_page">Hjem</a></li>
       <li><a href="/breathe">Breathe</a></li>
       <li><a href="/move">Move</a></li>
-      <li><a href="/spilln">Games</a></li>
+      <li><a href="/spill">Games</a></li>
       <li><a href="/doNothing">Do Nothing</a></li>
+      <li>
+        <form action="" id="wrapptimer">
+          <div id="wrappinput">
+            <input type="number" id="Min" class="clock" placeholder="min" max="59" min="0" oninput="if (this.value > 59) this.value = 59;">
+            <input type="number" id="Sec" class="clock" placeholder="sec" max="59" min="1">
+            
+
+          </div>
+          <button>Start</button>
+        </form>
+      </li>
     </ul>
   </nav>
