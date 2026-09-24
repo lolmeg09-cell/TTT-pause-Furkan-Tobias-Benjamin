@@ -9,11 +9,12 @@
         <form action="" id="wrapptimer">
           <div id="wrappinput">
             <input type="number" id="Min" class="clock" placeholder="min" max="59" min="0" oninput="if (this.value > 59) this.value = 59;">
-            <input type="number" id="Sec" class="clock" placeholder="sec" max="59" min="1">
+            <input type="number" id="Sec" class="clock" placeholder="sec" max="59" min="1" oninput="if (this.value > 59) this.value = 59;">
             
 
           </div>
-          <button>Start</button>
+          <p id="Timertext">00:00</p>
+          <button id="starttimer" type="submit">Start</button>
         </form>
       </li>
     </ul>
