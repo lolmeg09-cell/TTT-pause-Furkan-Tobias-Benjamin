@@ -13,15 +13,15 @@ let holdTimeout = null;
 let outTimeout = null;
 
 function breatheAnimation() {
-  text.innerText = 'Breathe In';
+  text.innerText = 'breathe in';
   container_b.classList.remove('grow', 'shrink');
   container_b.classList.add('grow');
 
    holdTimeout = setTimeout(() => {
-    text.innerText = 'Hold';
+    text.innerText = 'hold';
 
     outTimeout = setTimeout(() => {
-      text.innerText = 'Breathe Out';
+      text.innerText = 'breathe Out';
       container_b.classList.remove('grow', 'shrink');
       container_b.classList.add('shrink');
     }, holdTime);
@@ -31,7 +31,7 @@ function breatheAnimation() {
 function startBreathing() {
   if (isBreathing) return;
   isBreathing = true;
-  breatheBtn.innerText = 'Stop';
+  breatheBtn.innerText = 'stop';
 
   pointerContainer.classList.add('spinning');
   breatheAnimation();
@@ -40,7 +40,7 @@ function startBreathing() {
 
 function stopBreathing() {
   isBreathing = false;
-  breatheBtn.innerText = 'Start Breathing';
+  breatheBtn.innerText = 'start breathing';
 
   clearInterval(breatheInterval);
   breatheInterval = null;
