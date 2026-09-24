@@ -47,3 +47,7 @@ function nextSong() {
     playSong();
 }
 
+function formatTime (seconds) {
+   if (isNaN(seconds)) return '0:00'
+   const mins = math.floor(seconds / 60)
+}
