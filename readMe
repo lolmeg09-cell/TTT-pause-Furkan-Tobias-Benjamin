@@ -1,0 +1,18 @@
+TTT prosjekt==========================================================0
+
+Design========
+Prosjektet er designa til å gi brukere en pause in i mellom timen/jobb for å hvile hodet ditt
+
+Organisert============
+Prosjektet er organisert i en node.js struktur, som betyr et alt er linka med javascript som hjelper med file-managment 
+
+Node.JS er en måte å gi javascript en backend mulighet og gir mere kontroll over koden din. Node er ikke ett språk i en tradisjonel måte men et
+add on som gir javascript mer funksjoner. Node kan bli lastet ned på https://nodejs.org/en og det er mange tutorials på hvordan du kan laste det ned.
+
+Siden var laget på linuxOS men vil sannsynlig funke på alle de store Oprative systemene som MacOS eller Windows.
+===============================================================================================================
+
+
+
+
+
