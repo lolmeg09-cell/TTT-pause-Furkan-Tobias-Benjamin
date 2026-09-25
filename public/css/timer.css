@@ -38,7 +38,7 @@
 }
 
 .timer{
-  font-size: 4em;
+  font-size: 8em;
   font-weight: 700;
   margin: 0;
 }
@@ -100,10 +100,10 @@ hr{
 }
 
 .timer-input {
-  font-size: 5.5em;
+  font-size: 8em;
   font-weight: 700;
   margin: 0;
-  width: 4.5ch;
+  width: 5ch;
   text-align: center;
   background: transparent;
   border: none;

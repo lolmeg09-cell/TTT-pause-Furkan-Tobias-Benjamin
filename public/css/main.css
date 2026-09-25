@@ -185,9 +185,9 @@ h5 {
   
 }
 
-.box {
-  width: 150px;
-}
+  .box {
+    width: 150px;
+  }
 
 .p_start {
   padding: 7px;
@@ -226,4 +226,3 @@ h5 {
    }
 }
 
-.di

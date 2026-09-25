@@ -5,7 +5,7 @@
   <body>
   <!-- <%- include("./partials/nav.ejs") %> -->
   <%- include("./partials/darkmode.ejs") %>
-  <h1>Ta en pause</h1>
+  <h1 id="pause">Ta en pause</h1>
   <h1 id="pust">pust</h1>
   <p class="p_start">Skole kan ta mye energi, denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
   <p class="p_start">Kom tilbake til timen med et utvilt hodet.</p>
@@ -38,31 +38,36 @@
 <div id="nav2">
   <ul>
   <a href="/breathe"> <li id="box1" class="box">
-    breathe 
+     <span class="box_title">pust</span>
     <div class="div_wrp_p">
-      <p class="p_2">follow a gentle breathing rythm</p>
+      <p class="p_2">følg en puste rytme</p>
     </div>
+    <span class="box_title2">se mer</span>
     </li></a>
 
      <a href="/move"> <li id="box2" class="box">
-     move
+      <span class="box_title">bevegelse</span>
      <div class="div_wrp_p">
-
-       <p class="p_2">try simple activities to loosen up</p>
+       <p class="p_2">lette aktiviteter for å løsne opp</p>
       </div>
+      <span class="box_title2">se mer</span>
     </li></a>
     <a href="/spill"><li id="box3" class="box">
-      games
+       <span class="box_title">spill</span>
       <div class="div_wrp_p">
 
-        <p class="p_2">play games to relax and chill</p>
+        <p class="p_2">spill spill og chill</p>
       </div>
+      <span class="box_title2">se mer</span>
+
     </li></a>
     <a href="/meditate"><li id="box4" class="box">
-      meditate
+       <span class="box_title">meditering</span>
       <div class="div_wrp_p">
-        <p class="p_2">A place to find peace</p>
+        <p class="p_2">Et sted for fred å ro</p>
       </div>
+      <span class="box_title2">se mer</span>
+      
     </li></a>
   </ul>
 </div>

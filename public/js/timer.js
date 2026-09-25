@@ -7,6 +7,7 @@ const DEFAULT_TIME = 900;
 
 let timeLeft = 900;  
 let interval;
+let endTime = null; // timestamp (ms) when the timer should hit 0
 
 const updateTimer = () => {
   const minutes = Math.floor(timeLeft / 60)
@@ -17,19 +18,25 @@ const updateTimer = () => {
   ${seconds.toString().padStart(2,"0")}`;
 }
 
-const startTimer = () => {
-  if (interval) return; 
-  interval = setInterval(() => {
-    timeLeft--;
-    updateTimer();
+const tick = () => {
+  const remainingMs = endTime - Date.now();
+  timeLeft = Math.max(0, Math.round(remainingMs / 1000));
+  updateTimer();
 
-    if(timeLeft === 0){
-      clearInterval(interval);
-      alert("Time's up!")
-      timeLeft = DEFAULT_TIME;
-      updateTimer();
-    }
-  }, 1000);
+  if (timeLeft <= 0) {
+    clearInterval(interval);
+    interval = null;
+    endTime = null;
+    alert("Time's up!");
+    timeLeft = DEFAULT_TIME;
+    updateTimer();
+  }
+};
+
+const startTimer = () => {
+  if (interval) return;
+  endTime = Date.now() + timeLeft * 1000;
+  interval = setInterval(tick, 250); // frequent enough to stay accurate, cheap when active
 };
 
 const editTimer = () => {
@@ -83,25 +90,26 @@ const editTimer = () => {
 const stopTimer = () => {
   clearInterval(interval);
   interval = null;
+  endTime = null;
 };
 
 const resetTimer = () => {
   clearInterval(interval);
   interval = null;
+  endTime = null;
   timeLeft = DEFAULT_TIME;
   updateTimer();
 };
+
+// Re-sync immediately when the tab becomes visible again,
+// instead of waiting for the next throttled tick
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible" && interval && endTime) {
+    tick();
+  }
+});
 
 timer.addEventListener("click", editTimer);
 start.addEventListener("click", startTimer);
 stop.addEventListener("click", stopTimer);
 reset.addEventListener("click", resetTimer);
-
-
-
-
-
-
-
-
-
