@@ -158,3 +158,9 @@ hr{
   outline: none;
   letter-spacing: 0.02em;
 } 
+.timer-input {
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  background: transparent;
+}

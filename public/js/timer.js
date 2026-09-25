@@ -1,107 +1,222 @@
-const start = document.getElementById("start");
-const stop = document.getElementById("stop");
-const reset = document.getElementById("reset")
-const timer = document.getElementById("timer")
+(() => {
+  const DEFAULT_TIME = 900;
+  const STORAGE_KEY = "pauseTimer";
 
-const DEFAULT_TIME = 900;
+  const timer = document.getElementById("timer");
+  const start = document.getElementById("start");
+  const stop = document.getElementById("stop");
+  const reset = document.getElementById("reset");
 
-let timeLeft = 900;  
-let interval;
+  if (!timer) return;
 
-const updateTimer = () => {
-  const minutes = Math.floor(timeLeft / 60)
-  const seconds = timeLeft % 60
+  const defaultState = () => ({
+    status: "idle",
+    remaining: DEFAULT_TIME,
+    endTime: null,
+    alerted: true
+  });
 
-  timer.innerHTML = `${minutes.toString().padStart(2,"0")}
-  :
-  ${seconds.toString().padStart(2,"0")}`;
-}
+  function saveState(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
 
-const startTimer = () => {
-  if (interval) return; 
-  interval = setInterval(() => {
-    timeLeft--;
+  function readState() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      if (saved && ["idle", "running", "paused", "finished"].includes(saved.status)) {
+        return saved;
+      }
+    } catch {
+      // Use the default timer if saved data is invalid.
+    }
+
+    return defaultState();
+  }
+
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    saveState(defaultState());
+  }
+
+  function getRemaining(state) {
+    if (state.status === "running" && Number.isFinite(state.endTime)) {
+      return Math.max(0, Math.ceil((state.endTime - Date.now()) / 1000));
+    }
+
+    return Math.max(0, Number(state.remaining) || 0);
+  }
+
+  function formatTime(secondsLeft) {
+    const minutes = Math.floor(secondsLeft / 60);
+    const seconds = secondsLeft % 60;
+
+    return (
+      String(minutes).padStart(2, "0") +
+      ":" +
+      String(seconds).padStart(2, "0")
+    );
+  }
+
+  let isEditing = false;
+
+  function updateTimer() {
+    if (isEditing) return;
+
+    let state = readState();
+    const remaining = getRemaining(state);
+
+    if (state.status === "running" && remaining === 0) {
+      state = {
+        status: "finished",
+        remaining: 0,
+        endTime: null,
+        alerted: false
+      };
+      saveState(state);
+    }
+
+    timer.textContent = formatTime(remaining);
+
+    if (start) {
+      if (state.status === "running") start.textContent = "Pause";
+      else if (state.status === "paused") start.textContent = "Continue";
+      else if (state.status === "finished") start.textContent = "Start again";
+      else start.textContent = "Start";
+    }
+
+    if (state.status === "finished" && !state.alerted &&
+        document.visibilityState === "visible") {
+      state.alerted = true;
+      saveState(state);
+      alert("Time's up!");
+    }
+  }
+
+  function startTimer() {
+    const state = readState();
+
+    if (state.status === "running") {
+      saveState({
+        status: "paused",
+        remaining: getRemaining(state),
+        endTime: null,
+        alerted: true
+      });
+      updateTimer();
+      return;
+    }
+
+    let remaining = getRemaining(state);
+
+    if (state.status === "finished" || remaining === 0) {
+      remaining = DEFAULT_TIME;
+    }
+
+    saveState({
+      status: "running",
+      remaining,
+      endTime: Date.now() + remaining * 1000,
+      alerted: false
+    });
+
     updateTimer();
+  }
 
-    if(timeLeft === 0){
-      clearInterval(interval);
-      alert("Time's up!")
-      timeLeft = DEFAULT_TIME;
+  function stopTimer() {
+    const state = readState();
+
+    if (state.status !== "running") return;
+
+    saveState({
+      status: "paused",
+      remaining: getRemaining(state),
+      endTime: null,
+      alerted: true
+    });
+
+    updateTimer();
+  }
+
+  function resetTimer() {
+    saveState(defaultState());
+    updateTimer();
+  }
+
+  function formatInput(digits) {
+    const padded = digits.padStart(3, "0");
+    return padded.slice(0, -2) + ":" + padded.slice(-2);
+  }
+
+  function editTimer() {
+    if (readState().status === "running" || isEditing) return;
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.inputMode = "numeric";
+    input.className = "timer-input";
+
+    let digits = timer.textContent.replace(/\D/g, "").slice(-4) || "0";
+    input.value = formatInput(digits);
+
+    isEditing = true;
+    timer.replaceWith(input);
+    input.focus();
+    input.select();
+
+    function cancelEdit() {
+      if (!isEditing) return;
+      isEditing = false;
+      input.replaceWith(timer);
       updateTimer();
     }
-  }, 1000);
-};
 
-const editTimer = () => {
-  if (interval) return;
+    function applyEdit() {
+      if (!isEditing) return;
 
-  const input = document.createElement("input");
-  input.type = "text";
-  input.inputMode = "numeric";
-  input.className = "timer-input";
+      const [minuteText, secondText] = input.value.split(":");
+      const minutes = Number.parseInt(minuteText, 10) || 0;
+      const seconds = Math.min(59, Number.parseInt(secondText, 10) || 0);
+      const newTime = minutes * 60 + seconds;
 
-  const formatDisplay = (d) => {
-    const padded = d.padStart(3, "0");
-    const secs = padded.slice(-2);
-    const mins = padded.slice(0, -2);
-    return `${mins}:${secs}`;
-  };
+      isEditing = false;
+      input.replaceWith(timer);
 
-  let digits = timer.textContent.replace(":", "").replace(/^0+(?=\d)/, "");
-  if (!digits) digits = "0";
-  digits = digits.slice(-4);
+      if (newTime > 0) {
+        saveState({
+          status: "paused",
+          remaining: newTime,
+          endTime: null,
+          alerted: true
+        });
+      }
 
-  input.value = formatDisplay(digits);
-  timer.replaceWith(input);
-  input.focus();
-  input.select();
+      updateTimer();
+    }
 
-  input.addEventListener("input", () => {
-    const typed = input.value.replace(/\D/g, "");
-    digits = (typed.slice(-4)) || "0";
-    input.value = formatDisplay(digits);
-    input.setSelectionRange(input.value.length, input.value.length);
+    input.addEventListener("input", () => {
+      digits = input.value.replace(/\D/g, "").slice(-4) || "0";
+      input.value = formatInput(digits);
+      input.setSelectionRange(input.value.length, input.value.length);
+    });
+
+    input.addEventListener("blur", applyEdit);
+
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") input.blur();
+      if (event.key === "Escape") cancelEdit();
+    });
+  }
+
+  start?.addEventListener("click", startTimer);
+  stop?.addEventListener("click", stopTimer);
+  reset?.addEventListener("click", resetTimer);
+  timer.addEventListener("click", editTimer);
+
+  window.addEventListener("storage", (event) => {
+    if (event.key === STORAGE_KEY) updateTimer();
   });
 
-  const applyEdit = () => {
-    const [minPart, secPart] = input.value.split(":").map(p => parseInt(p, 10));
-    const minutes = Number.isNaN(minPart) ? 0 : Math.max(0, minPart);
-    const seconds = Number.isNaN(secPart) ? 0 : Math.min(59, Math.max(0, secPart));
+  document.addEventListener("visibilitychange", updateTimer);
+  setInterval(updateTimer, 1000);
 
-    timeLeft = minutes * 60 + seconds;
-    input.replaceWith(timer);
-    updateTimer();
-  };
-
-  input.addEventListener("blur", applyEdit);
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") input.blur();
-    if (e.key === "Escape") { input.value = timer.textContent; input.blur(); }
-  });
-};  
-
-const stopTimer = () => {
-  clearInterval(interval);
-  interval = null;
-};
-
-const resetTimer = () => {
-  clearInterval(interval);
-  interval = null;
-  timeLeft = DEFAULT_TIME;
   updateTimer();
-};
-
-timer.addEventListener("click", editTimer);
-start.addEventListener("click", startTimer);
-stop.addEventListener("click", stopTimer);
-reset.addEventListener("click", resetTimer);
-
-
-
-
-
-
-
-
-
+})();
