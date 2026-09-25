@@ -79,7 +79,7 @@ img {
 }
 .clock{
   width: 35px;
-  height: 35x;
+  height: 35px;
   box-sizing: border-box;
 }
 .clock::-webkit-outer-spin-button,
@@ -133,3 +133,90 @@ img {
   background-color: white;
   color: black;
 }
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+#wrapp_video{
+  /* width: 50%; */
+  border: 0;
+}
+
+.video_section {
+  width: 50%;
+}
+  .flexContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: center;
+  }
+ .meditation-steps {
+  width: 50%;
+    /* max-width: 1000px; */
+    /* margin: 60px auto; */
+    padding: 40px 24px;
+    color: #203c39;
+    text-align: center;
+  }
+
+
+
+  .top {
+    color: var(--accentColor);
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .meditation-steps h2 {
+    margin: 12px 0;
+    font-size: 2.5rem;
+  }
+
+  .intro {
+    max-width: 500px;
+    margin: 0 auto 40px;
+    color: var(--accentColor);
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .steg {
+    padding: 24px;
+    border-top: 1px solid #b8c9c0;
+    text-align: left;
+  }
+
+  .steg span {
+    color: #d4846d;
+    font-weight: bold;
+  }
+
+  .steg h3 {
+    margin: 24px 0 10px;
+    font-size: 1.4rem;
+  }
+
+  .steg p {
+    margin: 0;
+    color: var(--accentColor);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 700px) {
+    .steps {
+      grid-template-columns: 1fr;
+    }
+
+    .meditation-steps h2 {
+      font-size: 2rem;
+    }
+  }
+
