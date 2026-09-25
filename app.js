@@ -9,14 +9,21 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("index")
 });
+
 app.get("/spill", (req, res) => {
   res.render("spill")
 });
+
 app.get("/move", (req, res) => {
   res.render("move")
 });
+
 app.get("/breathe", (req, res) => {
   res.render("breathe")
+});
+
+app.get("/meditate", (req, res) => {
+  res.render("meditate")
 });
 
 

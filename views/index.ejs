@@ -6,9 +6,9 @@
   <!-- <%- include("./partials/nav.ejs") %> -->
   <%- include("./partials/darkmode.ejs") %>
   <h1>Ta en pause</h1>
-  <h1 id="pust">Pust</h1>
-  <p>Skole kan ta mye energi, denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
-  <p>Kom tilbake til timen med et utvilt hodet.</p>
+  <h1 id="pust">pust</h1>
+  <p class="p_start">Skole kan ta mye energi, denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
+  <p class="p_start">Kom tilbake til timen med et utvilt hodet.</p>
    <div class="music-container">
     <div class="song-info">
       <p id="artist"></p>
@@ -36,29 +36,35 @@
 
 
 <div id="nav2">
-  
-    <ul>
-      <div id="box1" class="box">
-        <li>
-          <a href="/breathe">Breathe</a>
-        </li>
+  <ul>
+  <a href="/breathe"> <li id="box1" class="box">
+    breathe 
+    <div class="div_wrp_p">
+      <p class="p_2">follow a gentle breathing rythm</p>
+    </div>
+    </li></a>
+
+     <a href="/move"> <li id="box2" class="box">
+     move
+     <div class="div_wrp_p">
+
+       <p class="p_2">try simple activities to loosen up</p>
       </div>
-      <div id="box2" class="box">
-        <li>
-          <a href="/move">Move</a>
-        </li>
+    </li></a>
+    <a href="/spill"><li id="box3" class="box">
+      games
+      <div class="div_wrp_p">
+
+        <p class="p_2">play games to relax and chill</p>
       </div>
-      <div id="box3" class="box">
-        <li>
-          <a href="/spill">Games</a>
-        </li>
+    </li></a>
+    <a href="/meditate"><li id="box4" class="box">
+      meditate
+      <div class="div_wrp_p">
+        <p class="p_2">A place to find peace</p>
       </div>
-      <div id="box4" class="box">
-        <li>
-          <a href="/doNothing">Do Nothing</a>
-        </li>
-      </div>
-    </ul>
+    </li></a>
+  </ul>
 </div>
 
 

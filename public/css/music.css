@@ -48,12 +48,14 @@ nav ul li {
 }
 
 #pust{
-  color: var(--thirdColor);
- position: relative;
+     color: var(--thirdColor);
+     position: relative;
      top: -50px;
      font-family: 'Times New Roman', Times, serif;
      font-weight: 100;
-   
+     margin: 0;
+     padding-bottom: 50px;
+
 }
 
 
@@ -93,18 +95,22 @@ p {
 
     
     
-    .box{
-        background-color: var(--secondColor,);
+.box{
+    background-color: var(--secondColor,);
       
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        padding: 20px 30px;
-        position: relative;
-    
-        margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    margin-top: 100px;
 
+ }
+
+ .p_2{
+  font-size: 20px;
  }
 
     
@@ -148,6 +154,7 @@ p {
   display: flex;
   justify-content: center;
   gap: 10px;
+  padding-top: 30px;
 
   
 }
@@ -196,6 +203,7 @@ p {
 
 
 .music-container {
+  padding-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
