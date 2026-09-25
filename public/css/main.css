@@ -1,23 +1,47 @@
 body {
   background: var(--linearColor);
+  color: var(--textColor);
+  transition: background 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  margin: 0;
+
 }
- 
+
 :root {
-  --bgColor:rgb(231, 106, 23);
-  --textColor:  #f7f1e7;
+  --bgColor: rgb(231, 106, 23);
+  --textColor: #F7F1E7;
   --secondColor: #C8C0B7;
-  --linearColor: linear-gradient(135deg, #700101 0%, #f4580b 35%, #F47716 65%, #ffc400 100%);
+  --linearColor: linear-gradient(135deg, #C83D0A 0%, #E9540B 35%, #F47716 65%, #FF9A32 100%);
+  --accentColor: pink;
+  --baseColor: #e8e9ed;
+  --start: greenyellow;
+  --stop:#C83D0A;
+  --reset: rgb(24, 137, 242);
+  --breatheCircle: conic-gradient(#55b7a4 0%, #4ca493 40%, #fff 40%, #fff 60%, #336d62 60%, #2a5b52 100%);
+  --whiteColor: white; 
+ 
+}
+
+.darkmode { 
+  --bgColor: #070b1d;
+  --textColor: #ffffff;
+  --secondColor: #a4a5b8;
+  --linearColor: linear-gradient(135deg, #070b1d 0%, #101425 50%, #3a435d 100%);
+  --accentColor: #0071ff;
+  --primaryColor:#3a435d;
 }
  
  
 nav {
   background-color: var(--accentColor);
   display: flex;
-  
-}
+} 
 
 nav ul li a {
   text-decoration: none;
+  color: var(--textColor);
+   font-family: Arial, Helvetica, sans-serif;
+
 }
 
 nav ul {
@@ -33,8 +57,230 @@ nav ul li {
   display: flex;
 }
 
+#theme-Switch{
+  height: 50px;
+  width:50px;
+  padding:0px;
+  border-radius:50%;
+  background-color: var(--baseColor);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:fixed;
+  top:  20px;
+  right: 20px;
+}
+
+#theme-Switch{
+  fill: var(--primaryColor);
+}
+
+#theme-Switch img:last-child{
+  display: none;
+}
+
+.darkmode #theme-Switch img:first-child {
+  display: none;
+}
+
+.darkmode #theme-Switch img:last-child {
+  display: block;
+}
+
+#wrapper_timer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container_t{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  color: var(--whiteColor);
+  background-color: rgba(255, 255, 255, 0.20);
+  border-radius: 2em;
+  padding: 4em 3em;
 
 
+}
+
+.title_t {
+  font-size: 3em;
+
+}
+
+hr{
+  width: 100%;
+  border-radius: 1em;
+  background-color: var(--whiteColor);
+  height: 5px;
+  border: none;
+}
+
+.btn_t   {
+  font-size: 2em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.5em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  color: var(--whiteColor);
+  cursor: pointer;
+  transition: transform 0.2 ease-in-out;
+}
+
+
+.timer{
+  font-size: 10em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.button_wrapper_t{
+  display:flex;
+  gap: 1em;
+}
+
+
+
+.btn_t:hover{
+  transform: translateY(-10px);
+
+}
+
+#start{
+  background-color: var(--start);
+  transition: filter 0.2s;
+}
+
+
+#stop{
+  background-color: var(--stop);
+  transition: filter 0.2s;
+}
+#reset{
+  background-color: var(--reset);
+  transition: filter 0.2s;
+}
+
+#start:active{
+  filter: brightness(80%);
+}
+
+#stop:active{
+  filter: brightness(80%);
+}
+
+#reset:active{
+  filter: brightness(80%);
+} 
+
+* {
+  box-sizing: border-box;
+}
+
+.container_b{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(1);
+  isolation: isolate;
+}
+
+.circle{
+  background-color: var(--bgColor);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle{
+  background: var(--breatheCircle);
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.pointer{
+  background-color: var(--whiteColor);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+  
+}
+
+.pointer-container{
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  transform: rotate(0deg);  
+  transform-origin: bottom center;
+}
+
+.pointer-container.spinning {
+  animation: rotate 7.5s linear infinite;
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container_b.grow {
+  animation:grow 3s linear forwards;
+}
+
+@keyframes grow {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.2);
+  }
+}
+
+.container_b.shrink {
+  animation: shrink 3s linear forwards;
+
+}
+
+@keyframes shrink{
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+
+  }
+}
 img {
   max-width: 200px;
 }

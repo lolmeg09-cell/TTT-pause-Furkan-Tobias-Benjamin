@@ -1,18 +1,97 @@
-<%- include("./partials/head.ejs") %>
+ <%- include("./partials/head.ejs") %> 
 
-<body>
-  <script>window.name = "home_page";</script>
-  <nav>
+
+
+  <body>
+  <!-- <%- include("./partials/nav.ejs") %> -->
+  <h1>Ta en pause</h1>
+  <h1 id="pust">Pust</h1>
+  <p>Skole kan ta mye energi, denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
+  <p>Kom tilbake til timen med et utvilt hodet.</p>
+   <div class="music-container">
+    <div class="song-info">
+      <p id="artist"></p>
+      <p id="title"></p>
+    </div>
+    <audio id="audio" src="./music/Ambient.mp3"></audio>
+                 
+   </div>
+   <div class="progressBar">
+     <input type="range" id="slider" min="0" max="100" value="0">
+     <div class="timeStamp">
+      <span id="currentTime">0:00</span>
+      <span id="duration">0:00</span>
+     </div>
+   </div>
+   <div class="Mnav">
+     <button id="prev" class="action-btn">◁◁</button>
+     <button id="play"class="action-btn main-btn">► Play</button>
+     <button id="next" class="action-btn">▷▷</button>
+   </div>
+
+
+<div id="nav2">
+  <div id="timer_box_wrap">
+    <div class="timerBox"></div>
+  </div>
     <ul>
-      <li><a href="/">Hjem</a></li>
-      <li><a href="/breathe" target="_blank">Breathe</a></li>
-      <li><a href="/move" target="_blank">Move</a></li>
-      <li><a href="/spill" target="_blank">Games</a></li>
-      <li><a href="/doNothing" target="_blank">Do Nothing</a></li>
+      <div id="box1" class="box">
+        <li>
+          <a href="/breathe">Breathe</a>
+        </li>
+      </div>
+      <div id="box2" class="box">
+        <li>
+          <a href="/move">Move</a>
+        </li>
+      </div>
+      <div id="box3" class="box">
+        <li>
+          <a href="/spill">Games</a>
+        </li>
+      </div>
+      <div id="box4" class="box">
+        <li>
+          <a href="/doNothing">Do Nothing</a>
+        </li>
+      </div>
     </ul>
-  </nav>
+</div>
+<p id="kredits">Laget av</p>
+<p id="kredits">Furkan  Benjamin  Tobias</p>
 
-  <h1>hei</h1>
+  <button id="theme-Switch">
+    <img src="./img/dark.svg" alt="dark mode button">
+    <img src="./img/light.svg" alt="light mode buton">
+
+  </button>
+
+  <div id="wrapper_timer">
+
+    
+    <div class="container_t">
+      <h1 class="title_t"> Timer </h1>
+      
+      <hr>
+      
+      <p class="timer" id="timer">25:00</p>
+      
+      
+      <div class="button_wrapper_t">
+        <button class="btn_t" id="start">Start</button>
+        <button class="btn_t" id="stop">Stop</button>
+        <button class="btn_t " id="reset">Reset</button>
+        
+      </div>
+      
+    </div>
+  </div>
+
+  
+
+
+
+
+
   
 </body>
-</html>

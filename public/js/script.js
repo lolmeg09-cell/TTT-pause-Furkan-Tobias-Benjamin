@@ -1,19 +1,21 @@
-const knapp = document.getElementById("randomknapp");
-const kort = document.querySelectorAll(".box2");
+// console.log("hello")
 
-let forrigeKort = -1;
+let darkmode = localStorage.getItem("darkmode")
+const themeSwitch = document.getElementById("theme-Switch");
 
-knapp.addEventListener("click", () => {
-  kort.forEach((card) => {
-    card.classList.remove("valgt");
-  });
+const enabelDarkmode = () => {
+  document.body.classList.add("darkmode")
+  localStorage.setItem("darkmode", "active")
+}
 
-  let tilfeldigKort;
+const disableDarkmode = () => {
+  document.body.classList.remove("darkmode")
+  localStorage.setItem("darkmode", "null")
+}
 
-  do {
-    tilfeldigKort = Math.floor(Math.random() * kort.length);
-  } while (tilfeldigKort === forrigeKort);
+if(darkmode === "active") enabelDarkmode()
 
-  forrigeKort = tilfeldigKort;
-  kort[tilfeldigKort].classList.add("valgt");
-});
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem("darkmode")
+  darkmode !== "active" ? enabelDarkmode() : disableDarkmode()
+})
