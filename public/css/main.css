@@ -379,90 +379,54 @@ img {
   background-color: white;
   color: black;
 }
+
+
 iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
 }
 #wrapp_video{
-  /* width: 50%; */
+  width: 70%;
   border: 0;
 }
 
 .video_section {
   width: 50%;
+  background-color: var(--secondColor);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 100px 50px;
 }
-  .flexContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    align-items: center;
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
   }
- .meditation-steps {
-  width: 50%;
-    /* max-width: 1000px; */
-    /* margin: 60px auto; */
-    padding: 40px 24px;
-    color: #203c39;
-    text-align: center;
+#wrapper_medetering{
+  display: flex;
+  flex-direction: row;
+width: 100%;
   }
 
-
-
-  .top {
-    color: var(--accentColor);
-    font-size: 0.8rem;
-    font-weight: bold;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+  #wrapper_medetering section {
+    border: 1px solid red;
   }
 
-  .meditation-steps h2 {
-    margin: 12px 0;
-    font-size: 2.5rem;
+  #text_section {
+    width: 50%;
+    padding: 100px 50px;
+    /* background-color: rgba(var(--secondColor), 0.1); */
   }
-
-  .intro {
-    max-width: 500px;
-    margin: 0 auto 40px;
-    color: var(--accentColor);
-  }
-
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-
-  .steg {
-    padding: 24px;
-    border-top: 1px solid #b8c9c0;
-    text-align: left;
-  }
-
-  .steg span {
-    color: #d4846d;
-    font-weight: bold;
-  }
-
-  .steg h3 {
-    margin: 24px 0 10px;
-    font-size: 1.4rem;
-  }
-
-  .steg p {
-    margin: 0;
-    color: var(--accentColor);
-    line-height: 1.6;
-  }
-
-  @media (max-width: 700px) {
-    .steps {
-      grid-template-columns: 1fr;
-    }
-
-    .meditation-steps h2 {
-      font-size: 2rem;
-    }
-  }
-
+#text_section p{
+  color: var(--textColor);
+  /* width: 10px; */
+  display: flex;
+  font-size: 1.5rem;
+  flex-direction: column;
+}
+#box22{
+  width: 80%;
+}

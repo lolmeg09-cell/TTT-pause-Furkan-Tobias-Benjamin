@@ -22,6 +22,9 @@ app.get("/mediter", (req, res) => {
 app.get("/breathe", (req, res) => {
   res.render("breathe")
 });
+app.get("/clock", (req, res) => {
+  res.render("clock")
+});
 
 
 
