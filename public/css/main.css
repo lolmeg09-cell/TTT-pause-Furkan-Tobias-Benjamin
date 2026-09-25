@@ -29,11 +29,12 @@ body {
   --linearColor: linear-gradient(135deg, #070b1d 0%, #101425 50%, #3a435d 100%);
   --accentColor: #0071ff;
   --primaryColor:#3a435d;
+  --greenButton: #7effd4;
 }
  
  
 nav {
-  background-color: var(--accentColor);
+
   display: flex;
 } 
 
@@ -55,6 +56,10 @@ nav ul {
 
 nav ul li {
   display: flex;
+}
+
+.nav_Main.currentpage {
+  text-decoration: underline;
 }
 
 #theme-Switch{
@@ -122,6 +127,23 @@ hr{
   background-color: var(--whiteColor);
   height: 5px;
   border: none;
+}
+
+.page_Inhold {
+  color: var(--textColor);
+}
+
+.overskrift {
+  color:var(--textColor);
+}
+#moveText {
+  color: var(--textColor);
+}
+
+
+
+#gameText {
+  color: var(--textColor);
 }
 
 .btn_t   {
@@ -291,16 +313,17 @@ img {
 }
  
 .box2{
-  border: 1px solid var(--accentColor);
+  border: 3px solid rgba(1, 84, 76, 0.479);
   border-radius: 20px;
   text-decoration: none;
   display: flex;
   flex-direction: column;
+  text-align: center;
   justify-content: center;
   align-items: center;
   padding-bottom: 10px;
   cursor: pointer;
-  border: 2px solid black;
+ 
   display: block;
 }
  
@@ -349,8 +372,8 @@ img {
   font-weight: bold;
 }
 .valgt {
-  border: 4px solid green;
-  box-shadow: 0 0 25px lightgreen;
+  border: 4px solid rgb(143, 254, 215);
+  box-shadow: 0 0 25px rgb(144, 238, 207);
   transform: scale(1.05);
 }
 #randomizerwrapp{
@@ -363,9 +386,9 @@ img {
 #randomknapp{
   border-radius: 20px;
   width: 100px;
-  background-color: black;
+  background-color: var(--bgColor);
   color: white;
-  border-color: black;
+  border: none;
   position: fixed;
   bottom: 40px;
   left: 50%;
@@ -376,6 +399,7 @@ img {
 }
 #randomknapp:hover{
   transform: translateX(-50%) scale(1.3);
-  background-color: white;
-  color: black;
+  background-color: var(--greenButton);
+  box-shadow: 0 0 25px rgb(144, 238, 207);
+  color: rgb(1, 33, 29);
 }

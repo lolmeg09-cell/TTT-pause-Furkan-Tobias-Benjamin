@@ -11,7 +11,7 @@ const artist = document.getElementById('artist');
 
 //songs
 const songs = [
-    {name: 'Ambient1', artist: 'Blix', src: './music/Ambient.mp3'},
+    {name: 'Ambient Music', artist: 'Blix', src: './music/Ambient.mp3'},
 ];
 
 let songIndex = 0;

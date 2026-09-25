@@ -139,9 +139,6 @@ p {
  }
 
     
-.box :hover {
-    background-color: var(--higlightColor);
-}
 
 .timerBox {
   background-color: var(--secondColor);
@@ -191,6 +188,7 @@ p {
   height: 40px;
   gap: 20px;
 }
+
 #prev:hover {
   filter: brightness(130%);
   
