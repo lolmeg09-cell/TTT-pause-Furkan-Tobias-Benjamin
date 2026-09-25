@@ -10,15 +10,16 @@ const artist = document.getElementById('artist');
   
 
 //songs
+// artist: 'Blix',
 const songs = [
-    {name: 'Ambient1', artist: 'Blix', src: './music/Ambient.mp3'},
+    {name: 'Ambient1',  src: './music/Ambient.mp3'},
 ];
 
 let songIndex = 0;
 
 function loadSong(song) {
     title.innerText = song.name;
-    artist.innerText = song.artist;
+    // artist.innerText = song.artist;
     audio.src = song.src;
 }
 

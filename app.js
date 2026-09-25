@@ -9,9 +9,11 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
   res.render("index")
 });
+
 app.get("/spill", (req, res) => {
   res.render("spill")
 });
+
 app.get("/move", (req, res) => {
   res.render("move")
 });
@@ -24,6 +26,10 @@ app.get("/breathe", (req, res) => {
 });
 app.get("/clock", (req, res) => {
   res.render("clock")
+});
+
+app.get("/meditate", (req, res) => {
+  res.render("meditate")
 });
 
 

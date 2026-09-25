@@ -1,0 +1,41 @@
+#theme-Switch{
+  height: 50px;
+  width:50px;
+  padding:0px;
+  border-radius:50%;
+  background-color: var(--baseColor);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:fixed;
+  top:  20px;
+  right: 20px;
+}
+
+#theme-Switch{
+  fill: var(--primaryColor);
+}
+
+#theme-Switch img:last-child{
+  display: none;
+}
+
+.darkmode #theme-Switch img:first-child {
+  display: none;
+}
+
+.darkmode #theme-Switch img:last-child {
+  display: block;
+}
+
+.darkmode { 
+  --start: #4ADE80;
+  --stop: #E5533D;
+  --reset: #0071ff;
+  --bgColor: #070b1d;
+  --textColor: #ffffff;
+  --secondColor: #a4a5b8;
+  --linearColor: linear-gradient(135deg, #070b1d 0%, #101425 50%, #3a435d 100%);
+  --accentColor: #0071ff;
+  --primaryColor:#3a435d;
+}

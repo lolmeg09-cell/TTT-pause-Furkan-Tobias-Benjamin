@@ -4,10 +4,11 @@
 
   <body>
   <!-- <%- include("./partials/nav.ejs") %> -->
+  <%- include("./partials/darkmode.ejs") %>
   <h1>Ta en pause</h1>
-  <h1 id="pust">Pust</h1>
-  <p>Skole kan ta mye energi, denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
-  <p>Kom tilbake til timen med et utvilt hodet.</p>
+  <h1 id="pust">pust</h1>
+  <p class="p_start">Skole kan ta mye energi, denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
+  <p class="p_start">Kom tilbake til timen med et utvilt hodet.</p>
    <div class="music-container">
     <div class="song-info">
       <p id="artist"></p>
@@ -29,63 +30,48 @@
      <button id="next" class="action-btn">▷▷</button>
    </div>
 
+   <div id="timer_box_wrap">
+     <%- include("./partials/timer.ejs") %>
+  </div>
+
 
 <div id="nav2">
-  <div id="timer_box_wrap">
-    <div class="timerBox"></div>
-  </div>
-    <ul>
-      <div id="box1" class="box">
-        <li>
-          <a href="/breathe">Breathe</a>
-        </li>
-      </div>
-      <div id="box2" class="box">
-        <li>
-          <a href="/move">Move</a>
-        </li>
-      </div>
-      <div id="box3" class="box">
-        <li>
-          <a href="/spill">Games</a>
-        </li>
-      </div>
-      <div id="box4" class="box">
-        <li>
-          <a href="/doNothing">Do Nothing</a>
-        </li>
-      </div>
-    </ul>
-</div>
-<p id="kredits">Laget av</p>
-<p id="kredits">Furkan  Benjamin  Tobias</p>
-
-  <button id="theme-Switch">
-    <img src="./img/dark.svg" alt="dark mode button">
-    <img src="./img/light.svg" alt="light mode buton">
-
-  </button>
-
-  <div id="wrapper_timer">
-
-    
-    <div class="container_t">
-      <h1 class="title_t"> Timer </h1>
-      
-      <hr>
-      
-      <p class="timer" id="timer">25:00</p>
-      
-      
-      <div class="button_wrapper_t">
-        <button class="btn_t" id="start">Start</button>
-        <button class="btn_t" id="stop">Stop</button>
-        <button class="btn_t " id="reset">Reset</button>
-        
-      </div>
-      
+  <ul>
+  <a href="/breathe"> <li id="box1" class="box">
+    breathe 
+    <div class="div_wrp_p">
+      <p class="p_2">follow a gentle breathing rythm</p>
     </div>
-  </div>
+    </li></a>
+
+     <a href="/move"> <li id="box2" class="box">
+     move
+     <div class="div_wrp_p">
+
+       <p class="p_2">try simple activities to loosen up</p>
+      </div>
+    </li></a>
+    <a href="/spill"><li id="box3" class="box">
+      games
+      <div class="div_wrp_p">
+
+        <p class="p_2">play games to relax and chill</p>
+      </div>
+    </li></a>
+    <a href="/meditate"><li id="box4" class="box">
+      meditate
+      <div class="div_wrp_p">
+        <p class="p_2">A place to find peace</p>
+      </div>
+    </li></a>
+  </ul>
+</div>
+
+
+
+
+
+
 
   
 

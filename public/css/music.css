@@ -11,8 +11,6 @@ body {
   --secondColor: #055f44; 
   --higlightColor: #975959; 
   --linearColor: linear-gradient(360deg, #e6f3e1, #C9D8C2, #9fbea8, #7da490, #456151);
-
-  
 }
 
 
@@ -42,37 +40,6 @@ nav ul li {
 
 
 
-h1{
-    display: flex;
-    justify-content: center;
-    font-size: 130px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-weight: 1000;
-    
-   
-}
-h2 {
-    color: var(--textColor);
-    font-size: 40px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   position: relative;
-   justify-content: left;
-   
- top: 20px;
-  display: flex;
- 
-   
-    
-}
-
-  
-h5 {
-  display: flex;
-  justify-content: right;
-  
-  font-weight: 200;
-  
-}
 .upperText {
    font-size: 20px;
    position: relative;
@@ -81,12 +48,14 @@ h5 {
 }
 
 #pust{
-  color: var(--thirdColor);
- position: relative;
+     color: var(--thirdColor);
+     position: relative;
      top: -50px;
      font-family: 'Times New Roman', Times, serif;
      font-weight: 100;
-   
+     margin: 0;
+     padding-bottom: 50px;
+
 }
 
 
@@ -101,6 +70,8 @@ p {
 }
 
  #nav2{
+  padding-top: 50px;
+  padding-bottom: 150px;
      display: flex;
      width: 100%;
      
@@ -124,18 +95,22 @@ p {
 
     
     
-    .box{
-        background-color: var(--secondColor,);
+.box{
+    background-color: var(--secondColor,);
       
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 20px;
-        padding: 20px 30px;
-        position: relative;
-    
-        margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 300px;
+    height: 200px;
+    position: relative;
+    margin-top: 100px;
 
+ }
+
+ .p_2{
+  font-size: 20px;
  }
 
     
@@ -179,6 +154,7 @@ p {
   display: flex;
   justify-content: center;
   gap: 10px;
+  padding-top: 30px;
 
   
 }
@@ -227,6 +203,7 @@ p {
 
 
 .music-container {
+  padding-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
