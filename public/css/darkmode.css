@@ -8,8 +8,17 @@
   justify-content:center;
   align-items:center;
   position:fixed;
-  top:  20px;
+  top:20px;
   right: 20px;
+  z-index: 100; 
+  cursor: pointer; 
+  border: none;
+}
+
+
+#theme-Switch:active {
+  filter: brightness(70%);
+  transform: scale(0.95); 
 }
 
 #theme-Switch{

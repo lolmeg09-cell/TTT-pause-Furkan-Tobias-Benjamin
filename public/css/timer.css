@@ -62,7 +62,7 @@ hr {
 }
 
 .btn_t:hover {
-  transform: translateY(-10px);
+  transform: translateY(-4px);
 }
 
 #start { background-color: var(--start); transition: filter 0.2s; }
