@@ -1,0 +1,40 @@
+[33m8bb416b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmergeBranch[m[33m, [m[1;31morigin/mergeBranch[m[33m)[m fixing merge conflict with main
+[33me3e6018[m[33m ([m[1;31morigin/pauselink[m[33m, [m[1;32mpauselink[m[33m)[m updating meditaiton
+[33mbf35536[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m Merge pull request #8 from lolmeg09-cell/breathe
+[33md5e6163[m updating text
+[33me6fc036[m Merge pull request #7 from lolmeg09-cell/music
+[33m5cdf2cb[m fixing merge conflict
+[33m096579a[m fixing merge conflict
+[33ma9167f4[m apparently merging
+[33mbbd6101[m adding changes
+[33mcd3651f[m updating folder structure and adding music
+[33m6140137[m renaming music.css
+[33m4ed7d2b[m renaming music.css
+[33m9523622[m adding pause
+[33m007e978[m adding music
+[33m0a135eb[m fixing merge conflicts
+[33md66fd47[m Merge pull request #5 from lolmeg09-cell/pauselink
+[33m5bd4335[m adding things
+[33m355ddaf[m Merge pull request #4 from lolmeg09-cell/pauselink
+[33mec24935[m mye, har adda en musikk spiller som ikke funker enna men snart og endra fargene
+[33m4116bda[m la til en start og stopp knapp for puste funksjonen endret kode i js og css og html
+[33m0538b9e[m lagde en puste veilednings funksjon og brukte javascript css og html
+[33mfbf8b4f[m lagde en timer som er på 25 min og har en start stopp og reset funksjon
+[33m2ccd83e[m Games er lags pluss at navbaren er endret og har fått klokke
+[33m07aa551[m lagde en dark mode funksjon og endret på css js
+[33m5175e88[m Bakgrunns farge og headers plus hoved navbar
+[33m437c0e4[m Merge pull request #3 from lolmeg09-cell/Javascript
+[33m0731fcb[m[33m ([m[1;31morigin/Javascript[m[33m)[m Merge pull request #2 from lolmeg09-cell/main
+[33ma55a74c[m bakgrunn
+[33m22b2695[m resolving merge conflict
+[33m9881f34[m Merge pull request #1 from lolmeg09-cell/Design
+[33m7463854[m linear
+[33m39e8029[m[33m ([m[1;31morigin/Design[m[33m)[m kioi
+[33m22a41f7[m WIP: saving my local changes before pulling
+[33m4715c4c[m nav
+[33mf26deab[m fikk opp nettsiden
+[33mcf25bf2[m  spill ejs
+[33mfab0dbd[m la til partials
+[33m090b22e[m third commit
+[33mb77a430[m second comit
+[33m66650d5[m first commit

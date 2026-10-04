@@ -1,0 +1,93 @@
+<%- include("./partials/head.ejs") %>
+<link rel="stylesheet" href="./css/timer.css">
+
+<body>
+  <h1>Ta en pause</h1>
+  <h1 id="pust">Pust</h1>
+
+  <p>Skole kan ta mye energi. Denne nettsiden er til å ta en pause og hvile hodet ditt.</p>
+  <p>Kom tilbake til timen med et utvilt hode.</p>
+
+  <div class="music-container">
+    <div class="song-info">
+      <p id="artist"></p>
+      <p id="title"></p>
+    </div>
+
+    <audio id="audio" src="./music/Ambient.mp3"></audio>
+  </div>
+
+  <div class="progressBar">
+    <input type="range" id="slider" min="0" max="100" value="0">
+
+    <div class="timeStamp">
+      <span id="currentTime">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <div class="Mnav">
+    <button id="prev" class="action-btn">◁◁</button>
+    <button id="play" class="action-btn main-btn">► Play</button>
+    <button id="next" class="action-btn">▷▷</button>
+  </div>
+
+  <div id="nav2">
+    <ul>
+      <li class="box">
+        <a href="/breathe">Breathe</a>
+      </li>
+
+      <li class="box">
+        <a href="/move">Move</a>
+      </li>
+
+      <li class="box">
+        <a href="/spill">Games</a>
+      </li>
+
+      <li class="box">
+        <a href="/doNothing">Do Nothing</a>
+      </li>
+    </ul>
+  </div>
+
+  <p id="kredits">Laget av</p>
+  <p id="kredits">Furkan Benjamin Tobias</p>
+
+  <button id="theme-Switch">
+    <img src="./img/dark.svg" alt="Dark mode">
+    <img src="./img/light.svg" alt="Light mode">
+  </button>
+
+ <div id="wrapper_timer">
+  <div class="container_t">
+    <h1 class="title_t">Timer</h1>
+    <hr>
+
+    <div id="timerSetup">
+      <div class="time-field">
+        <label for="minutesInput">Minutes</label>
+        <input id="minutesInput" type="number" min="0" max="59" value="25" oninput="if (this.value > 59) this.value = 59;">
+      </div>
+
+      <div class="time-field">
+        <label for="secondsInput">Seconds</label>
+        <input id="secondsInput" type="number" min="0" max="59" value="0" oninput="if (this.value > 59) this.value = 59;">
+      </div>
+    </div>
+
+    <p class="timer" id="timer" hidden>25:00</p>
+
+    <div class="button_wrapper_t">
+      <button class="btn_t" id="start" type="button">Start</button>
+      <button class="btn_t" id="stop" type="button">Stop</button>
+      <button class="btn_t" id="reset" type="button">Reset</button>
+    </div>
+  </div>
+</div>
+
+  <script src="/js/newtimer.js" defer></script>
+</body>
+
+</html>

@@ -19,7 +19,9 @@ app.get("/mediter", (req, res) => {
   res.render("mediter")
 });
 
-
+app.get("/clock", (req, res) => {
+  res.render("clock")
+});
 
 app.get("/breathe", (req, res) => {
   res.render("breathe")
