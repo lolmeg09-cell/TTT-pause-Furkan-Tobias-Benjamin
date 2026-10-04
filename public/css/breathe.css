@@ -1,0 +1,142 @@
+#text-b {
+  font-size: 70px;
+}
+
+#container_t_b {
+  padding-bottom: 50px ;
+}
+
+#wrap_everything_b {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+
+}
+
+#breathe-btn-container {
+  display: flex;
+  padding-top: 70px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#breathe-btn{
+  padding: 15px 35px;
+  border-radius: 20px;
+}
+
+.circle{
+  background-color: #2d8d71;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle{
+  background: var(--breatheCircle);
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.pointer{
+  background-color: var(--whiteColor);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.pointer-container{
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  transform: rotate(0deg);  
+  transform-origin: bottom center;
+}
+
+.pointer-container.spinning {
+  animation: rotate 7.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container_b.grow {
+  animation:grow 3s linear forwards;
+}
+
+@keyframes grow {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.2);
+  }
+}
+
+.container_b.shrink {
+  animation: shrink 3s linear forwards;
+
+}
+
+@keyframes shrink{
+  from {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1);
+
+  }
+}
+
+#wrapper_b {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_b{
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(1);
+  isolation: isolate;
+  
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
