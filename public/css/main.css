@@ -116,7 +116,7 @@ img {
 }
 
 .box2 img {
-  width: 250px;
+  width: 210px;
   height: 200px;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
@@ -259,9 +259,7 @@ iframe {
   font-size: 1.5rem;
   flex-direction: column;
 }
-#box22 {
-  width: 80%;
-}
+
 
 /* h1 {
   display: flex;
@@ -314,9 +312,7 @@ iframe {
   font-size: 1.5rem;
   flex-direction: column;
 }
-#box22 {
-  width: 80%;
-}
+
 h1 {
   display: flex;
   justify-content: center;
@@ -399,11 +395,23 @@ nav {
 }
 
 .page_Inhold {
-  padding-top: 35px;
+  padding-top: 15px;
 }
 
 .card-text {
   color: var(--textColor);
   font-size: 15px;
 }
+
+.nav_Main a.active {
+  font-weight: 700;
+  border-bottom: 3px solid var(--secondColor);
+}
+
+.nav_Main a.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.2em 0.3em;
+  border-radius: 0.5em;
+}
+
 

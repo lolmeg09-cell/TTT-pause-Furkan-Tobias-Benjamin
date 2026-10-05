@@ -6,6 +6,11 @@ app.set("view engine", "ejs")
 app.use(express.urlencoded({extended:true}));
 app.use(express.static("public"));
 
+app.use((req, res, next) => {
+  res.locals.currentPath = req.path;
+  next();
+});
+
 app.get("/", (req, res) => {
   res.render("index")
 });
@@ -26,6 +31,7 @@ app.get("/clock", (req, res) => {
 app.get("/breathe", (req, res) => {
   res.render("breathe")
 });
+
 
 
 

@@ -12,8 +12,8 @@ const artist = document.getElementById('artist');
 //songs
 // artist: 'Blix',
 const songs = [
-    {name: 'Ambient Music',  src: './music/Ambient.mp3'},
-     {name: 'Autumn Breeze',  src: './music/Autumnz Breeze.mp3'},
+    {name: 'ambient music',  src: './music/Ambient.mp3'},
+     {name: 'autumn breeze',  src: './music/Autumn.mp3'},
 ];
 
 let songIndex = 0;
