@@ -1,0 +1,382 @@
+/* ==========================================================
+   mobile.css
+   Load this LAST in head.ejs, after all other stylesheets,
+   so these rules override the desktop styles.
+   ========================================================== */
+
+/* ---------- Base (all sizes) ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+/* body {
+  overflow-x: hidden;
+} */
+
+/* Bigger tap targets on touch screens */
+@media (pointer: coarse) {
+  button,
+  .btn_t,
+  .action-btn,
+  nav a {
+    min-height: 44px;
+  }
+}
+
+/* ==========================================================
+   Tablet and below (<= 900px)
+   ========================================================== */
+@media (max-width: 900px) {
+  #wrapper_medetering {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .video_section,
+  #text_section {
+    width: 100%;
+  }
+
+  #wrapp_video iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
+
+/* ==========================================================
+   Phone (<= 600px)
+   ========================================================== */
+@media (max-width: 600px) {
+
+  /* ----- Dark mode toggle: smaller, tucked in the corner ----- */
+  #theme-Switch {
+    height: 42px;
+    width: 42px;
+    top: 10px;
+    right: 10px;
+  }
+
+  #theme-Switch img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* ----- Navigation: wraps instead of overflowing ----- */
+  nav {
+    width: 100%;
+    padding: 0.5em 3.5em 0.5em 0.5em; /* room for the theme button */
+  }
+
+  .nav_Main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25em 0.9em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav_Main li a {
+    display: inline-block;
+    padding: 0.5em 0.4em;
+    font-size: 0.95rem;
+  }
+
+  /* ----- Front page ----- */
+    #pause,
+  #pust {
+    position: static !important;
+    transform: none !important;
+    margin: 0 !important;
+    line-height: 1.2;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  #pause {
+    font-size: 2.2rem;
+    padding-top: 4rem;        /* clears the dark mode button */
+  }
+
+  #pust {
+    font-size: 1.6rem;
+    margin-top: 0.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .p_start {
+    font-size: 0.95rem;
+    padding: 0 1.25rem;
+    margin: 0 0 1rem;
+    text-align: center;
+  }
+
+  /* ----- More space around the music player and timer ----- */
+  .music-container {
+    margin-top: 2.5rem;
+  }
+
+  .progressBar {
+    margin-top: 1.25rem;
+  }
+
+  .Mnav {
+    margin-top: 1.25rem;
+    margin-bottom: 3rem;      /* space between player and timer */
+  }
+
+  #timer_box_wrap {
+    margin-bottom: 3rem;      /* space between timer and the link boxes */
+  }
+
+  #nav2 {
+    margin-bottom: 3rem;      /* space at the bottom of the page */
+  }
+
+  /* ----- Music player ----- */
+  .music-container {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .music-container { margin-top: 2.5rem; }
+    .Mnav { margin-bottom: 3rem; }
+
+  .song-info {
+    text-align: center;
+  }
+
+  .progressBar {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #slider {
+    width: 100%;
+  }
+
+  .Mnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6em;
+  }
+
+  .action-btn {
+    padding: 0.6em 1em;
+    font-size: 1rem;
+  }
+
+  /* ----- Timer ----- */
+  #timer_box_wrap {
+    width: 100%;
+    padding: 0 0.75rem;
+  }
+
+  #wrapper_timer {
+    padding-top: 1.5rem;
+  }
+
+  #wrapptimer {
+    width: 100%;
+  }
+
+  .container_t {
+    padding: 1em;
+    gap: 1em;
+    border-radius: 1.25em;
+    width: 100%;
+  }
+
+  .title_t {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  /* 8em is huge on a phone: scale with screen width instead */
+  .timer {
+    font-size: clamp(3rem, 20vw, 5rem);
+  }
+
+  .timer-input {
+    font-size: clamp(3rem, 20vw, 5rem);
+    width: 5ch;
+    max-width: 100%;
+  }
+
+  .button_wrapper_t {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6em;
+  }
+
+  .btn_t {
+    font-size: 0.95rem;
+    padding: 0.7em 1.2em;
+  }
+
+  /* ----- Front page link boxes (pust / bevegelse / spill / meditering) ----- */
+  #nav2 {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  #nav2 ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  #nav2 .box {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* ----- Breathing exercise ----- */
+  #wrap_everything_b {
+    padding: 0 0.5rem;
+  }
+
+  #text-b {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  #wrapper_b {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Scale the animated circle down so it fits the screen.
+     Adjust 0.65 if it still looks too big or too small. */
+  #container_b,
+  .container_b {
+    transform: scale(0.65);
+    transform-origin: center top;
+    margin-bottom: -6rem; /* removes the empty space the scale leaves behind */
+  }
+
+  #breathe-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  /* ----- Subpages: Spill, Bevegelse ----- */
+  .page_Inhold {
+    padding: 0 1rem;
+  }
+
+  .overskrift {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+ .box1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1em;
+  justify-items: center;
+  width: 100%;
+}
+
+.cardlink {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+}
+
+.box2 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+
+.box2 img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+  /* ----- Randomizer on the Bevegelse page ----- */
+  #randomizer {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  #randomknapp {
+    width: 100%;
+    max-width: 320px;
+    padding: 0.8em 1em;
+    font-size: 1rem;
+  }
+
+  /* ----- Meditering ----- */
+  .flexContainer {
+    padding: 0 1rem;
+  }
+
+  #text_section {
+    padding: 0 0.25rem;
+  }
+
+  #text_section h2 {
+    font-size: 1.4rem;
+  }
+}
+
+/* ==========================================================
+   Very small phones (<= 380px)
+   ========================================================== */
+@media (max-width: 380px) {
+  #pause {
+    font-size: 1.8rem;
+  }
+
+  .nav_Main li a {
+    font-size: 0.85rem;
+    padding: 0.5em 0.3em;
+  }
+
+  .btn_t {
+    padding: 0.6em 1em;
+  }
+
+  #container_b,
+  .container_b {
+    transform: scale(0.55);
+    margin-bottom: -8rem;
+  }
+}
+
+/* ==========================================================
+   Landscape phones: little vertical room
+   ========================================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  #wrapper_timer {
+    padding-top: 1rem;
+  }
+
+  .timer,
+  .timer-input {
+    font-size: 4rem;
+  }
+} 

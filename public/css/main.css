@@ -203,8 +203,14 @@ h1{
     display: flex;
     justify-content: center;
     font-size: 130px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "quicksand", sans-serif;
+
     font-weight: 1000; 
+}
+
+@font-face {
+  font-family: "quicksand" ;
+  src: url("../fonts/Quicksand/Quicksand-VariableFont_wght.ttf");
 }
 
 iframe {
@@ -219,8 +225,6 @@ iframe {
 
 .video_section {
   width: 50%;
-  background-color: var(--secondColor);
-  border-radius: 20px;
   display: flex;
   justify-content: center;
   padding: 100px 50px;
@@ -241,11 +245,14 @@ iframe {
 }
 
 #text_section {
+  background-color: var(--bgColor);
+  border-radius: 20px;
   width: 50%;
   padding: 0px 50px;
   /* background-color: rgba(var(--secondColor), 0.1); */
 }
 #text_section p {
+
   color: var(--textColor);
   /* width: 10px; */
   display: flex;
@@ -269,14 +276,12 @@ iframe {
   border: 0;
 }
 #wrapp_video {
-  width: 70%;
+  width: 100%;
   border: 0;
 }
 
 .video_section {
   width: 50%;
-  background-color: var(--secondColor);
-  border-radius: 20px;
   display: flex;
   justify-content: center;
   padding: 100px 50px;
@@ -299,6 +304,7 @@ iframe {
 #text_section {
   width: 50%;
   padding: 0px 50px;
+  border-radius: 20px 20px 0px 0px ;
   /* background-color: rgba(var(--secondColor), 0.1); */
 }
 #text_section p {
@@ -345,11 +351,11 @@ h5 {
   transform: translateY(-10px);
 }
 
-#spill-box{
+.box2{
   transition: transform 0.2s ease-in-out;
 }
 
-#spill-box:hover {
+.box2:hover {
   transform: translateY(-10px);
 }
 
@@ -394,5 +400,10 @@ nav {
 
 .page_Inhold {
   padding-top: 35px;
+}
+
+.card-text {
+  color: var(--textColor);
+  font-size: 15px;
 }
 
